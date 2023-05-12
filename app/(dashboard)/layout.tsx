@@ -13,7 +13,7 @@ export default function Layout({
 
             <article>
             <Suspense fallback={<Loading></Loading>}>
-                <Album artist={{
+                <Album artistId={{
           id: 'the-beatles',
           name: 'The Beatles',
         }}/>

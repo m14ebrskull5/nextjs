@@ -6,15 +6,12 @@ import { fetchData } from './data.js';
 // For a realistic example you can follow today, try a framework
 // that's integrated with Suspense, like Relay or Next.js.
 
-export default function Albums({ artistId }) {
-  const albums = use(fetchData(`/${artistId}/albums`));
+export default async function Albums({ artistId }) {
+  const albums = await fetchData(`/${artistId}/albums`);
+  console.log(albums)
   return (
     <ul>
-      {albums.map(album => (
-        <li key={album.id}>
-          {album.title} ({album.year})
-        </li>
-      ))}
+      {albums.map(i => <li key={i.id}>{i.type}</li>)}
     </ul>
   );
 }
